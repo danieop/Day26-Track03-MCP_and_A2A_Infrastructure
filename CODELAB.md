@@ -18,7 +18,7 @@ Sau khi hoàn thành codelab này, bạn sẽ:
 ### Yêu Cầu Hệ Thống
 - Python 3.11 trở lên
 - [uv](https://docs.astral.sh/uv/) package manager
-- API key từ [OpenRouter](https://openrouter.ai)
+- API key từ ShopAIKey
 
 ### Cài Đặt
 
@@ -32,7 +32,7 @@ uv sync
 
 # Cấu hình environment
 cp .env.example .env
-# Sửa file .env, thêm OPENROUTER_API_KEY của bạn
+# Sửa file .env, thêm SHOPAIKEY_API_KEY của bạn
 ```
 
 ---
@@ -411,7 +411,7 @@ Tích hợp LangSmith hoặc Prometheus để monitor agent performance.
 
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
 - [A2A Protocol Spec](https://github.com/google/A2A)
-- [OpenRouter API](https://openrouter.ai/docs)
+- ShopAIKey OpenAI-compatible API
 - Architecture diagrams: `docs/*.svg`
 
 ## Hỗ Trợ

@@ -1,0 +1,7 @@
+2026-05-14 10:25:48,749 [tax_agent] INFO HTTP Request: POST http://localhost:10000/register "HTTP/1.1 200 OK"
+2026-05-14 10:25:48,752 [tax_agent] INFO Registered with registry (attempt 1)
+2026-05-14 10:25:48,757 [tax_agent] INFO Tax Agent listening on port 10102
+INFO:     Started server process [23000]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10102 (Press CTRL+C to quit)

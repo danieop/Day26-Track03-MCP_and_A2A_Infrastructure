@@ -1,18 +1,27 @@
-"""Shared LLM factory for all agents.
-
-Uses OpenRouter as an OpenAI-compatible API, so any provider's model
-can be selected via the OPENROUTER_MODEL env var.
-"""
+"""Shared LLM factory for all agents."""
 
 import os
 
 from langchain_openai import ChatOpenAI
+from openai import OpenAI
+
+
+SHOPAIKEY_BASE_URL = "https://api.shopaikey.com/v1"
+DEFAULT_MODEL = "gpt-5.4-mini"
+
+
+def get_openai_client() -> OpenAI:
+    """Return the raw OpenAI-compatible ShopAIKey client."""
+    return OpenAI(
+        api_key=os.getenv("SHOPAIKEY_API_KEY"),
+        base_url=os.getenv("SHOPAIKEY_BASE_URL", SHOPAIKEY_BASE_URL),
+    )
 
 
 def get_llm() -> ChatOpenAI:
-    """Return a ChatOpenAI client pointed at OpenRouter."""
+    """Return a ChatOpenAI client pointed at ShopAIKey."""
     return ChatOpenAI(
-        model=os.getenv("OPENROUTER_MODEL", "anthropic/claude-sonnet-4-5"),
-        openai_api_key=os.getenv("OPENROUTER_API_KEY"),
-        openai_api_base="https://openrouter.ai/api/v1",
+        model=os.getenv("SHOPAIKEY_MODEL", DEFAULT_MODEL),
+        openai_api_key=os.getenv("SHOPAIKEY_API_KEY"),
+        openai_api_base=os.getenv("SHOPAIKEY_BASE_URL", SHOPAIKEY_BASE_URL),
     )

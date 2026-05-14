@@ -1,0 +1,7 @@
+2026-05-14 10:25:54,747 [law_agent] INFO HTTP Request: POST http://localhost:10000/register "HTTP/1.1 200 OK"
+2026-05-14 10:25:54,751 [law_agent] INFO Registered with registry (attempt 1)
+2026-05-14 10:25:54,755 [law_agent] INFO Law Agent listening on port 10101
+INFO:     Started server process [25292]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10101 (Press CTRL+C to quit)

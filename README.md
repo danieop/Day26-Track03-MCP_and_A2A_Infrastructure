@@ -64,7 +64,7 @@ User question
 | Layer | Choice |
 |---|---|
 | Agent framework | [LangGraph](https://langchain-ai.github.io/langgraph/) |
-| LLM provider | Any model via [OpenRouter](https://openrouter.ai) (OpenAI-compatible API) |
+| LLM provider | ShopAIKey OpenAI-compatible API |
 | A2A transport | [a2a-sdk](https://pypi.org/project/a2a-sdk/) |
 | Registry | FastAPI + in-memory store |
 | Package manager | [uv](https://docs.astral.sh/uv/) |
@@ -107,7 +107,7 @@ Tổng kết & Q&A (15 phút)
 
 - Python 3.11+
 - [uv](https://docs.astral.sh/uv/) package manager
-- An [OpenRouter](https://openrouter.ai) API key
+- A ShopAIKey API key
 
 ### Setup
 
@@ -119,7 +119,7 @@ uv sync
 
 # Configure environment
 cp .env.example .env
-# Edit .env with your OpenRouter API key
+# Edit .env with your ShopAIKey API key
 ```
 
 ### Run the Full System (Stage 5)
@@ -140,7 +140,7 @@ No servers needed — each demo runs as a standalone script:
 uv run python stages/stage_1_direct_llm/main.py
 uv run python stages/stage_2_rag_tools/main.py
 uv run python stages/stage_3_single_agent/main.py
-uv run python stages/stage_4_multi_agent/main.py
+uv run python stages/stage_4_milti_agent/main.py
 ```
 
 ## LLM Evolution Stages
@@ -167,7 +167,7 @@ legal_multiagent/
 ├── .env.example               # Required environment variables
 │
 ├── common/                    # Shared utilities
-│   ├── llm.py                 # get_llm() → ChatOpenAI via OpenRouter
+│   ├── llm.py                 # get_llm() -> ChatOpenAI via ShopAIKey
 │   ├── a2a_client.py          # delegate() — A2A message sending
 │   └── registry_client.py     # discover() / register() — Registry API
 │
@@ -181,7 +181,7 @@ legal_multiagent/
 │   ├── stage_1_direct_llm/
 │   ├── stage_2_rag_tools/
 │   ├── stage_3_single_agent/
-│   └── stage_4_multi_agent/
+│   └── stage_4_milti_agent/
 │
 └── docs/                      # Architecture diagrams (SVG)
 ```
@@ -195,11 +195,12 @@ Each agent module follows the same structure:
 
 | Environment Variable | Description | Default |
 |---|---|---|
-| `OPENROUTER_API_KEY` | Your OpenRouter API key | (required) |
-| `OPENROUTER_MODEL` | Model identifier | `anthropic/claude-sonnet-4-5` |
+| `SHOPAIKEY_API_KEY` | Your ShopAIKey API key | (required) |
+| `SHOPAIKEY_MODEL` | Model identifier | `gpt-5.4-mini` |
+| `SHOPAIKEY_BASE_URL` | OpenAI-compatible API base URL | `https://api.shopaikey.com/v1` |
 | `REGISTRY_URL` | Registry service URL | `http://localhost:10000` |
 
-The model is swappable to any OpenRouter-supported model (e.g., `openai/gpt-4o`, `google/gemini-2.0-flash`).
+The default model is `gpt-5.4-mini` via ShopAIKey.
 
 ## Documentation Diagrams
 

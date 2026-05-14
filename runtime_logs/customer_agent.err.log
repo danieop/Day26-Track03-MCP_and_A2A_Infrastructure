@@ -1,0 +1,9 @@
+2026-05-14 10:25:57,748 [customer_agent] INFO HTTP Request: POST http://localhost:10000/register "HTTP/1.1 200 OK"
+2026-05-14 10:25:57,751 [customer_agent] INFO Registered with registry (attempt 1)
+2026-05-14 10:25:57,755 [customer_agent] INFO Customer Agent listening on port 10100
+INFO:     Started server process [24512]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10100 (Press CTRL+C to quit)
+2026-05-14 10:26:57,123 [customer_agent] WARNING Deprecated agent card endpoint '/.well-known/agent.json' accessed. Please use '/.well-known/agent-card.json' instead. This endpoint will be removed in a future version.
+2026-05-14 10:29:31,558 [customer_agent] WARNING Deprecated agent card endpoint '/.well-known/agent.json' accessed. Please use '/.well-known/agent-card.json' instead. This endpoint will be removed in a future version.

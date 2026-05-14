@@ -1,0 +1,32 @@
+[
+    {
+        "Name":  "registry",
+        "Id":  17244,
+        "Port":  10000,
+        "Url":  "http://localhost:10000"
+    },
+    {
+        "Name":  "tax_agent",
+        "Id":  23000,
+        "Port":  10102,
+        "Url":  "http://localhost:10102"
+    },
+    {
+        "Name":  "compliance_agent",
+        "Id":  26840,
+        "Port":  10103,
+        "Url":  "http://localhost:10103"
+    },
+    {
+        "Name":  "law_agent",
+        "Id":  25292,
+        "Port":  10101,
+        "Url":  "http://localhost:10101"
+    },
+    {
+        "Name":  "customer_agent",
+        "Id":  24512,
+        "Port":  10100,
+        "Url":  "http://localhost:10100"
+    }
+]
